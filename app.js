@@ -16,6 +16,9 @@ const steps = [
 const STORAGE_KEY = "valentineOfficialSince";
 const OFFICIAL_TEXT = "Official since Feb 14, 2026 💞";
 
+const INITIAL_GIF = "https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif";
+const INITIAL_TEXT = "Tap next for a very serious proposal…";
+
 const stepGif = document.getElementById("step-gif");
 const stepText = document.getElementById("step-text");
 const nextBtn = document.getElementById("next-btn");
@@ -60,8 +63,20 @@ const updateButtonLabel = () => {
     stepsLeft > 0 ? `Next (${stepsLeft}) ➜` : "Open the question 💘";
 };
 
+const resetToStart = () => {
+  currentStep = 0;
+  stepGif.src = INITIAL_GIF;
+  stepText.textContent = INITIAL_TEXT;
+  nextBtn.classList.remove("hidden");
+  finalScreen.classList.add("hidden");
+  successScreen.classList.add("hidden");
+  storageHint.classList.add("hidden");
+  updateButtonLabel();
+};
+
 stepGif.addEventListener("error", () => {
-  stepGif.src = "https://placehold.co/800x600/ffd1e8/4a084b?text=Funny+GIF+blocked+on+this+network+%F0%9F%98%85";
+  stepGif.src =
+    "https://placehold.co/800x600/ffd1e8/4a084b?text=Funny+GIF+blocked+on+this+network+%F0%9F%98%85";
   stepText.textContent =
     "GIFs are blocked on this network, but the flow still works 💌";
 });
@@ -93,10 +108,4 @@ yesBtn.addEventListener("click", () => {
   showSuccess(dateText);
 });
 
-const alreadyOfficial = getStoredOfficialDate();
-if (alreadyOfficial) {
-  nextBtn.classList.add("hidden");
-  showSuccess(alreadyOfficial);
-} else {
-  updateButtonLabel();
-}
+resetToStart();
