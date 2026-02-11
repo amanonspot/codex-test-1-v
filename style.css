@@ -1,0 +1,76 @@
+:root {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #ffd1e8, #f4b8ff 45%, #ff99c8);
+  color: #4a084b;
+}
+
+.card {
+  width: min(92vw, 520px);
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(6px);
+  border-radius: 24px;
+  padding: 1.5rem;
+  box-shadow: 0 14px 35px rgba(74, 8, 75, 0.25);
+  text-align: center;
+}
+
+.title {
+  margin-top: 0;
+}
+
+.gif {
+  width: 100%;
+  border-radius: 16px;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.14);
+}
+
+.message,
+.final-text {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.btn {
+  border: 0;
+  padding: 0.8rem 1.2rem;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.15s ease, opacity 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.primary {
+  color: #fff;
+  background: #d81b60;
+}
+
+.success {
+  color: #fff;
+  background: #7b1fa2;
+}
+
+.hidden {
+  display: none;
+}
+
+#official-date {
+  font-weight: 700;
+}
