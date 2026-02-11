@@ -63,7 +63,7 @@ const updateButtonLabel = () => {
 stepGif.addEventListener("error", () => {
   stepGif.src = "https://placehold.co/800x600/ffd1e8/4a084b?text=Funny+GIF+blocked+on+this+network+%F0%9F%98%85";
   stepText.textContent =
-    "GIFs are blocked on this network, but the valentine flow still works 💌";
+    "GIFs are blocked on this network, but the flow still works 💌";
 });
 
 nextBtn.addEventListener("click", () => {
