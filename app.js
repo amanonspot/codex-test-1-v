@@ -108,4 +108,12 @@ yesBtn.addEventListener("click", () => {
   showSuccess(dateText);
 });
 
-resetToStart();
+const initApp = () => {
+  resetToStart();
+};
+
+window.addEventListener("pageshow", () => {
+  resetToStart();
+});
+
+initApp();
